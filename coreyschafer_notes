@@ -1,0 +1,444 @@
+#####################
+### June 22, 2022 ###
+#####################
+
+#############
+## STRINGS ##
+#############
+
+# Creating a string with quotes
+message = "Hello World"
+print(message)
+
+# Creating a string with triple quotes
+#   notes: Triple quotes includes indentations/returns
+message = """Hello
+World"""
+print(message)
+
+# Length function
+message = "Hello World"
+print(len(message))
+
+# Indexing a string
+message = "Hello World"
+print(message[0])
+print(message[0:5])
+
+# Lower/Upper case method
+message = "Hello World"
+print(message.lower())
+
+# Count method
+#   notes: Count returns the number the searched string
+message = "Hello World"
+print(message.count('Hello'))
+#   return: 1
+
+# Find method
+#   notes: Find returns the index of a searched string
+message = "Hello World"
+print(message.find('World'))
+#   return: 6
+
+# Replace method
+#   notes: Replaces a part of a string with another string.
+#   Does not replace the existing string variable, needs to be assigned.
+message = "Hello World"
+message = message.replace("Hello", "Bye")
+print(message)
+#   return: "Bye World"
+
+# Concatenate strings
+greeting = "Hello"
+name = "Michael"
+message = greeting + ", " + name + "."
+print(message)
+#   return: "Hello, Michael."
+
+# f strings
+greeting = "Hello"
+name = "Michael"
+message = f"{greeting}, {name}. Welcome!"
+#   return: "Hello, Michael. Welcome!"
+
+# Method directory
+print(dir(str))
+
+#######################
+## INTEGERS & FLOATS ##
+#######################
+
+# Arithmetic operators
+#   Addition: 3 + 2
+#   Subtraction: 3 - 2
+#   Multiplication: 3 * 2
+#   Division: 3 / 2
+#   Floor Division: 3 // 2
+#       notes: Floor divisions round decimal down.
+#   Exponent: 3 ** 2
+#       notes: aka. Power, = 9
+#   Modulus: 3 % 2
+#       notes: aka. Remainder, = 1
+
+# Absolute value
+print(abs(-3))
+#   return: 3
+
+# Round value
+print(round(3.75))
+#   return: 4
+print(round(3.75, 1))
+#   return: 3.8
+
+# Comparison operators
+#       notes: Values returned are boolean.
+#   Equal: 3 == 2
+#   Not Equal: 3 != 2
+#   Greater Than: 3 > 2
+#   Less Than: 3 < 2
+#   Greater Than or Equal: 3 >= 2
+
+###########################
+## LISTS, TUPLES, & SETS ##
+###########################
+
+#########
+# Lists #
+#########
+
+# Creating a list
+courses = ["History", "Math", "Physics", "Compsci"]
+print(courses)
+#   return: ["History", "Math", "Physics", "Compsci"]
+
+# Append a list
+courses = ["History", "Math", "Physics", "Compsci"]
+courses.append("Art")
+print(courses)
+#   return: ["History", "Math", "Physics", "Compsci", "Art"]
+
+# Insert a list
+#   notes: Same as append but specific location
+courses = ["History", "Math", "Physics", "Compsci"]
+courses.insert(0, "Art")
+print(courses)
+#   return: ["Art", "History", "Math", "Physics", "Compsci"]
+
+# Extend a list
+#   notes: Add the individual values of a list into another list
+courses = ["History", "Math", "Physics", "Compsci"]
+courses_2 = ["Art", "PE"]
+courses.extend(courses_2)
+print(courses)
+#   return: ["History", "Math", "Physics", "Compsci", "Art", "PE"]
+
+# Remove item from list
+courses = ["History", "Math", "Physics", "Compsci"]
+courses.remove("Math")
+print(courses)
+#   return: ["History", "Physics", "Compsci"]
+
+# Pop a list (remove and return last item)
+courses = ["History", "Math", "Physics", "Compsci"]
+popped = courses.pop()
+print(courses)
+#   return: ["History", "Math", "Physics"]
+print(popped)
+#   return: "Compsci"
+
+# Reverse a list
+courses = ["History", "Math", "Physics", "Compsci"]
+courses.reverse()
+print(courses)
+#   return: ["Compsci", "Physics", "Math", "History"]
+
+# Sort a list (replaces)
+courses = ["History", "Math", "Physics", "Compsci"]
+nums = [1, 5, 2, 4, 3]
+courses.sort()
+nums.sort()
+print(courses)
+print(nums)
+#   return: ["Compsci", "History", "Math", Physics"]
+#   [1, 2, 3, 4, 5]
+#       notes: to reverse sort, write var.sort(Reverse=True)
+
+# Sort a list (returns)
+courses = ["History", "Math", "Physics", "Compsci"]
+sorted_courses = sorted(courses)
+print(sorted_courses)
+#   return: ["Compsci", "History", "Math", "Physics"]
+
+# Min/Max a list
+num = [1, 5, 2, 4, 3]
+print(min(nums))
+#   return: 1
+print(max(nums))
+#   return: 5
+
+# Index method (for a list)
+courses = ["History", "Math", "Physics", "Compsci"]
+print(courses.index("History"))
+#   return: 0
+
+# Search (for a list)
+courses = ["History", "Math", "Physics", "Compsci"]
+print("History" in courses)
+#   return: True
+
+# "For" loops
+courses = ["History", "Math", "Physics", "Compsci"]
+for item in courses:
+    print(item)
+#   return: "History"
+#   "Math"
+#   "Physics"
+#   "Compsci"
+
+# Join method (list -> string)
+courses = ["History", "Math", "Physics", "Compsci"]
+courses_str = ', '.join(courses)
+print(courses_str)
+#   return: "History, Math, Physics, Compsci"
+
+# Split method (string -> list)
+course_str = "History, Math, Physics, Compsci"
+course_list = course_str.split(", ")
+print(course_list)
+#   return: ["History", "Math", "Physics", "Compsci"]
+
+##########
+# Tuples #
+##########
+
+tuple_1 = ("History", "Math", "Physics")
+#   notes: Same as list, but immutable, no indexing. 
+#          tuple_1[0] = error.
+
+########
+# Sets #
+########
+
+set_1 = {"History", "Math", "Physics", "Math"}
+#   return: {"Physics", "History", "Math"}
+#   notes: Randomizes order of values each run, removes duplicate values.
+
+# Intersecting method (for sets)
+set_1 = {"History", "Math", "Physics", "Compsci"}
+set_2 = {"History", "Math", "Art", "Design"}
+print(set_1.intersection(set_2))
+#   return: {"History", "Math"}
+
+# Difference method (for sets)
+set_1 = {"History", "Math", "Physics", "Compsci"}
+set_2 = {"History", "Math", "Art", "Design"}
+print(set_1.difference(set_2))
+#   return: {"Physics", "Compsci"}
+
+# Union method (for sets) to combine sets
+set_1 = {"History", "Math", "Physics", "Compsci"}
+set_2 = {"History", "Math", "Art", "Design"}
+print(set_1.union(set_2))
+#   return: {"History", "Math", "Art", "Design", "Physics", "Compsci"}
+
+# How to create an empty lists, tuples, and sets
+empty_list = list()
+empty_tuple = tuple()
+empty_set = set()
+
+##################
+## DICTIONARIES ##
+##################
+
+# Create a dictionary
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+print(student)
+#   return: {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+
+# Indexing a dictionary
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+print(student)['courses']
+#   return: {['Math', 'Compsci']}
+
+# Get method (recommended over Index)
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+print(student.get('phone'))
+#   return: None
+print(student.get('phone', "Not Found"))
+#   return: "Not Found"
+#       notes: same as index, except does not end up in error. Instead, if
+#       value is not found, it returns "Not Found".
+
+# Create/update a single new key:value pair in dictionary
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+student['phone'] = '555-5555'
+student['name'] = 'Jane'
+print(student.get('phone'))
+#   return: '555-5555'
+
+# Update a dictionary (add multiple new values or update values)
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+student.update({'name': 'Tracy', 'age': 25, 'ugly': 'Yes'})
+print(student)
+#   return: {'name': 'Tracy', 'age': 25, 'courses': ['Math', 'Compsci'], 'ugly': 'Yes'}
+#       notes: Adds all new values from update to the dictionary.
+
+# Delete a single key:value pair in dictionary
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+del student['age']
+print(student)
+#   return: {'name': 'John', 'courses': ['Math', 'Compsci']}
+
+# Pop a dictionary (remove key and returns the value)
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+age = student.pop('age')
+print(student)
+print(age)
+#   return: {'name': 'John', 'courses': ['Math', 'Compsci']}
+#   25
+
+# Recall keys/values of dictionary
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+print(student.keys())
+print(student.values())
+print(student.items())
+#   return: dict_keys(['name', 'age', 'courses'])
+#           dict_values(['John', 25, ['Math', 'Compsci']])
+#           dict_items([('name', 'John'), ('age', 25), ('courses', ['Math', 'Compsci'])])
+
+# Loop through dictionary (keys & values)
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'Compsci']}
+for key in student:
+    print(key)
+for key, value in student.items():
+    print(key, value)
+#   return: 'name'
+#           'age'
+#           'courses'
+#           'name' 'John'
+#           'age' 25
+#           'courses' ['Math', 'Compsci']
+
+################################################
+## Conditions & Booleans - If, Else, and Elif ##
+################################################
+
+# ID function & 'is' operator
+#   notes: Retrieves the unique id of a variable. Variables can
+#          only have the same ID if they are exactly equal (via assignment).
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a is b) # checks if id's are ==
+#   return: False
+a = [1, 2, 3]
+a = b
+print(a is b)
+#   return: True
+
+#######################
+## For / While Loops ##
+#######################
+
+# Break function
+nums = [1, 2, 3, 4, 5]
+for num in nums:
+    print(num)
+    if num == 3:
+        print('Found!')
+        break
+#   return: 1
+#           2
+#           'Found!'
+#       notes: Stops the existing loop.
+
+# Continue function
+nums = [1, 2, 3, 4, 5]
+for num in nums:
+    print(num)
+    if num == 3:
+        print('Found!')
+        continue
+#   return: 1
+#           2
+#           3
+#           'Found!'
+#           4
+#           5
+#       notes: Immediately skip to the next iteration of the loop.
+
+ # Nesting loops
+ nums = [1, 2, 3, 4, 5]
+ for num in nums:
+    for letter in 'abc':
+         print(num, letter)
+#   return: 1 a
+#           1 b
+#           1 c
+#           2 a
+#           2 b
+#           2 c 
+#           etc...
+
+# Range
+for n in range(10):
+    print(n)
+#   return: 0 1 2 3 4 5 6 7 8 9
+for n in range(1, 11):
+    print(n)
+#   return: 1 2 3 4 5 6 7 8 9 10
+
+# While loop
+x = 0
+while x < 10:
+    print(x)
+    x += 1
+#   return: 0 1 2 3 4 5 6 7 8 9
+
+###############
+## Functions ##
+###############
+
+# Create a function
+def hello_func():
+    pass
+#   notes: 'pass' allows a function to exist in code without throwing an error.
+
+# Arguments in a function
+def hello_func(greeting, name="Corey"):
+    return f"{greeting}, {name}"
+print(hello_func("Hi"))
+#   return: "Hi, Corey"
+#       notes: You can overwrite the variable by re-stating when recalling function.
+ex: print(hello_func("Hi", name="Jason"))
+#   return: "Hi, Jason", overwriting "Hi, Corey"
+
+# *Args & **Kwargs
+def student_info(*args, **kwargs):
+    print(args)
+    print(kwargs)
+student_info('Math', 'Art', 'Science', name='John', age=25, title='Engineer')
+#   return: ('Math', 'Art', 'Science')
+#           {'name': 'John', 'age': 25, 'title': 'Engineer'}
+
+# * & ** in Function Arguments
+#   notes: Used to unpack lists/dictionaries
+courses = ['Math', 'Art']
+info = {'name': 'John', 'age': 22}
+def student_info(*args, **kwargs):
+    print(args)
+    print(kwargs)
+student_info(*courses, **info)
+#   return: ('Math', 'Art')
+#           {'name': 'John', 'age': 22}
+
+####################
+## Import Modules ##
+####################
+
+# Standard module library
+import random
+import math
+import datetime
+import calendar
+import os
